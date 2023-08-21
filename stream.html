@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Camera Live Stream</title>
+    <link rel="stylesheet" href="stream-style.css">
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: "Open Sans", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .stream-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #stream-video {
+            width: 100%;
+            max-height: 100%;
+        }
+        
+        #help-section {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 14px;
+            color: #999;
+        }
+                
+        #company-name {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: "BitMapper", Arial, sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=BitMapper&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="company-name">BitMapper Integration</div>
+    
+    <div class="stream-container">
+        <video id="stream-video" autoplay controls>
+            <!-- For H.264 codec -->
+            <source src="http://10.0.0.10:9001/stream" type="video/mp4; codecs=avc1.42E01E">
+            <!-- For H.265 codec -->
+            <source src="http://10.0.0.10:9001/stream" type="video/mp4; codecs=hev1.1.6.L93.90">
+            <!-- Fallback content for browsers that don't support HTML5 video -->
+            Your browser does not support the video tag. Please use a modern browser to view the stream.
+        </video>
+    </div>
+
+    <div id="help-section">
+        Need help? <a href="contact.html">Contact support</a>
+    </div>
+
+    <script src="stream-script.js"></script>
+</body>
+</html>
